@@ -26,6 +26,7 @@ jobs:
         id: get_version
         run: |
           VERSION="${GITHUB_REF#refs/tags/}"
+          VERSION="${VERSION#refs/heads/}"
           VERSION="${VERSION#v}"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
